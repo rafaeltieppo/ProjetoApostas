@@ -8,6 +8,15 @@ const create = async (req, res) => {
     res.json(ret);
 }
 
+const read = async (req, res) => {
+    const id = req.params.id;
+
+    const ret = await Cliente.read(id);
+
+    res.json(ret);
+}
+
 module.exports = {
-    create
+    create,
+    read
 }
