@@ -1,14 +1,14 @@
-const { Model, DataType } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 class Ticket extends Model {
     static init(datacon) {
         super.init(
             {
                 id_ticket: {
-                    type: DataType.INTEGER
+                    type: DataTypes.INTEGER
                 },
                 saldo: {
-                    type: DataType.DECIMAL(5, 2),
+                    type: DataTypes.DECIMAL(5, 2),
                     allowNull: false
                 }
             },

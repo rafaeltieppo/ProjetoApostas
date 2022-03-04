@@ -42,7 +42,7 @@ class Aposta extends Model {
     }
 
     static associate(models) {
-
+        Aposta.belogsTo(models.cliente, { foreingKey: 'id_cliente' })
     }
 }
 

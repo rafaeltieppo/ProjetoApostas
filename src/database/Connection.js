@@ -18,8 +18,6 @@ const sequelize = new Sequelize(process.env.DATABASE, process.env.USER ,'', {
 const sync = () => {
     Cliente.init(sequelize);
 
-    // Cliente.associate(sequelize.models);
-
     sequelize.sync({ force : false });
 }
 
