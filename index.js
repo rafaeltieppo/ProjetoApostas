@@ -13,5 +13,5 @@ app.use(route)
 
 app.listen(process.env.APP_PORT, () => {
     console.log("Servidor ON na porta", process.env.APP_PORT);
-    Connection.sync();
-});
+    Connection.sync();                                                                                                                               
+});  
