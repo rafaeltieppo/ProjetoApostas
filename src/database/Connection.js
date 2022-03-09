@@ -18,7 +18,7 @@ const sequelize = new Sequelize(process.env.DATABASE, process.env.USER ,'', {
 const sync = () => {
     Cliente.init(sequelize);
 
-    sequelize.sync({ force : false });
+    sequelize.sync({ force : true });
 }
 
 module.exports = {
