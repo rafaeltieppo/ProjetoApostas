@@ -28,7 +28,7 @@ class Aposta extends Model {
                     allowNull: false
                 },
                 placar: {
-                    type: DataTypes.STRING,
+                    type: DataTypes.STRING(10),
                     allowNull: false
                 }
             },
@@ -41,9 +41,9 @@ class Aposta extends Model {
         );
     }
 
-    static associate(models) {
-        Aposta.belogsTo(models.cliente, { foreingKey: 'id_cliente' })
-    }
+    // static associate(models) {
+    //     Aposta.belogsTo(models.cliente, { foreingKey: 'id_cliente' })
+    // }
 }
 
 module.exports = Aposta;

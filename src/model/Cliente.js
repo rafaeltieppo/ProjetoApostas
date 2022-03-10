@@ -13,7 +13,7 @@ class Cliente extends Model {
                 },
                 cpf: {
                     type: DataTypes.INTEGER,
-                    allowNull: false,
+                    allowNull: false,  
                     unique: true
                 },
                 nascimento: {
