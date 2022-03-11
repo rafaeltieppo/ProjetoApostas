@@ -11,9 +11,9 @@ const create = async (req, res) => {
 const read = async (req, res) => {
     const id = req.params.id;
 
-    const ret = await Assistente.findAll(id);
+    const ret = await Assistente.findAll(id)
 
-    res.json(ret)
+    res.json(ret);
 }
 
 const update = async (req, res) => {
@@ -25,7 +25,7 @@ const update = async (req, res) => {
         where: { id: id }
     });
 
-    res.json(ret)
+    res.json(ret);
 }
 
 const remove = async (req, res) => {
