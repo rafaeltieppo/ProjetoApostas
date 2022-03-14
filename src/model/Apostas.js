@@ -41,9 +41,9 @@ class Aposta extends Model {
         );
     }
 
-    // static associate(models) {
-    //     Aposta.belogsTo(models.cliente, { foreingKey: 'id_cliente' })
-    // }
+    static associate(models) {
+        Aposta.belogsTo(models.cliente, { foreingKey: 'id_cliente' });
+    }
 }
 
 module.exports = Aposta;
