@@ -4,9 +4,6 @@ class Assistente extends Model {
     static init(datacon) {
         super.init(
             {
-                id_cliente: {
-                    type: DataTypes.INTEGER
-                },
                 nome: {
                     type: DataTypes.STRING(200),
                     allowNull: false

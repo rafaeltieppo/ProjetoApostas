@@ -5,7 +5,7 @@ const create = async (req, res) => {
     
     const ret = await Assistente.create(data);
 
-    res.json(ret)
+    res.json(ret);
 }
 
 const read = async (req, res) => {

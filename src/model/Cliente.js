@@ -4,7 +4,6 @@ class Cliente extends Model {
     static init(datacon) {
         super.init(
             {
-               
                 nome: {
                     type: DataTypes.STRING(250),
                     allowNull: false,

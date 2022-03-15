@@ -4,9 +4,6 @@ class Aposta extends Model {
     static init(datacon) {
         super.init(
             {
-                id_aposta: {
-                    type: DataTypes.INTEGER
-                },
                 status_aposta: {
                     type: DataTypes.BOOLEAN,
                     allowNull: false
