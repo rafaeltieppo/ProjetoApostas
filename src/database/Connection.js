@@ -22,7 +22,7 @@ const sync = () => {
     Team.init(sequelize);
     Ticket.init(sequelize);
 
-    sequelize.sync({ force : true });
+    sequelize.sync({ force : false });
 }
 
 module.exports = {

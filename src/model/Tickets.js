@@ -17,6 +17,10 @@ class Ticket extends Model {
             }
         );
     }
+
+    static associate(models) {
+        Ticket.belongTo(models.aposta, {  })
+    }
 }
 
 module.exports = Ticket;

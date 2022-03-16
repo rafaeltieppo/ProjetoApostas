@@ -4,10 +4,14 @@ class Team extends Model {
     static init(datacon) {
         super.init(
             {
-                nomes_times: {
+                nome_time1: {
                     type: DataTypes.STRING(40),
                     allowNull: false
-                }
+                },
+                nome_time2: {
+                    type: DataTypes.STRING(40),
+                    allowNull: false
+                },
             },
 
             {
