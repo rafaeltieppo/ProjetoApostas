@@ -9,12 +9,20 @@ class Aposta extends Model {
                     allowNull: false
                 },
                 time_1: {
-                    type: DataTypes.STRING(40),
-                    allowNull: false
+                    type: DataTypes.INTEGER,
+                    allowNull: false,
+                    references: {
+                        model: 'teams',
+                        key: 'id'
+                    }
                 },
                 time_2: {
-                    type: DataTypes.STRING(40),
-                    allowNull: false
+                    type: DataTypes.INTEGER,
+                    allowNull: false,
+                    references: {
+                        model: 'teams',
+                        key: 'id'
+                    }
                 },
                 tempo_do_jogo: {
                     type: DataTypes.TIME(2),
@@ -27,9 +35,16 @@ class Aposta extends Model {
                 placar: {
                     type: DataTypes.STRING(10),
                     allowNull: false
+                },
+                id_assistente: {
+                    type: DataTypes.INTEGER,
+                    allowNull: false,
+                    references: {
+                        model: 'assistentes',
+                        key: 'id'
+                    }
                 }
             },
-
             {
                 sequelize: datacon,
                 tableName: 'apostas',
@@ -39,7 +54,8 @@ class Aposta extends Model {
     }
 
     static associate(models) {
-        Aposta.belogsTo(models.cliente, { foreingKey: 'id_cliente' });
+        Aposta.belongsTo(models.team, { foreingKey: 'id' });
+        Aposta.belongsTo(models.assistente, { foreingKey: 'id' });
     }
 }
 

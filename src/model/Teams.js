@@ -4,11 +4,7 @@ class Team extends Model {
     static init(datacon) {
         super.init(
             {
-                nome_time1: {
-                    type: DataTypes.STRING(40),
-                    allowNull: false
-                },
-                nome_time2: {
+                nome_time: {
                     type: DataTypes.STRING(40),
                     allowNull: false
                 },
@@ -20,6 +16,10 @@ class Team extends Model {
                 modelName: 'team'
             }
         );
+    }
+
+    static associate(models) {
+        Team.hasMany(models.aposta, { foreignKey: 'id' })
     }
 }
 

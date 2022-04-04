@@ -1,4 +1,6 @@
 const Ticket = require('../model/Tickets');
+const Aposta = require('../model/Apostas');
+const Team = require('../model/Teams');
 
 const create = async (req, res) => {
     const data = req.body;
@@ -11,7 +13,11 @@ const create = async (req, res) => {
 const read = async (req, res) => {
     const id = req.params.id;
 
-    const ret = await Ticket.findAll(id);
+    const ret = await Ticket.findAll({
+        include: [
+            { model: Aposta },
+        ]        
+    });
 
     res.json(ret);
 }

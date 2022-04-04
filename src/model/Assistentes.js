@@ -30,6 +30,10 @@ class Assistente extends Model {
             }
         );
     }
+
+    static associate(models) {
+        Assistente.hasMany(models.aposta, { foreignKey: 'id_assistente' });
+    }
 }
 
 module.exports = Assistente;

@@ -38,12 +38,12 @@ class Cliente extends Model {
                 modelName: 'cliente'
             }
             
-        );
+        ); 
     }
 
-    // static associate(models) {
-    //     Cliente.hasMany(models.aposta, { foreignKey: 'id_cliente' });
-    // }
+    static associate(models) {          
+        Cliente.hasMany(models.ticket, { foreignKey: 'id_cliente' });
+    }
 }
 
 module.exports = Cliente;

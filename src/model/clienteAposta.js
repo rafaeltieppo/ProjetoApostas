@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Ticket extends Model {
+class ClienteAposta extends Model { 
     static init(datacon) {
         super.init(
             {
@@ -20,24 +20,19 @@ class Ticket extends Model {
                         key: 'id'
                     }
                 },
-                saldo: {
-                    type: DataTypes.DECIMAL(5, 2),
-                    allowNull: false
-                }
             },
-
             {
                 sequelize: datacon,
-                tableName: 'tickets',
-                modelName: 'ticket'
-            }
-        );
+                tableName: 'cliente_aposta',
+                modelName: 'clienteAposta'
+            }            
+        ); 
     }
 
-    static associate(models) {
-        Ticket.belongsTo(models.aposta, { foreignKey: 'id' });
-        Ticket.belongsTo(models.cliente, { foreignKey: 'id' });
+    static associate(models) {     
+        ClienteAposta.belongsTo(models.aposta, { foreignKey: 'id' });
+        ClienteAposta.belongsTo(models.cliente, { foreignKey: 'id' });
     }
 }
 
-module.exports = Ticket; 
+module.exports = ClienteAposta;
