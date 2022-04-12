@@ -6,7 +6,8 @@ const Aposta = require('../model/Apostas');
 const Assistente = require('../model/Assistentes');
 const Team = require('../model/Teams');
 const Ticket = require('../model/Tickets');
-const ClienteAposta = require('../model/clienteAposta')
+const ClienteAposta = require('../model/clienteAposta');
+const Login = require("../model/Login")
 
 const sequelize = new Sequelize(process.env.DATABASE, process.env.USER ,'', {
     host: process.env.HOST,
@@ -23,6 +24,7 @@ const sync = () => {
     Assistente.init(sequelize);
     Ticket.init(sequelize);
     ClienteAposta.init(sequelize);
+    Login.init(sequelize);
 
     Cliente.associate(sequelize.models);
     Team.associate(sequelize.models);

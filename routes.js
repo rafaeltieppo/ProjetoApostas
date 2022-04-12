@@ -6,6 +6,7 @@ const ApostaController = require('./src/controller/ApostaController');
 const AssistenteController = require('./src/controller/AssistentesController');
 const TeamController = require('./src/controller/TeamsController');
 const TicketController = require('./src/controller/TicketController');
+const LoginController = require('./src/controller/LoginController');
 
 route.post('/cliente', ClienteController.create);
 route.get('/cliente', ClienteController.read);
@@ -32,5 +33,12 @@ route.post('/ticket', TicketController.create);
 route.get('/ticket', TicketController.read);
 route.put('/ticket/:id', TicketController.update);
 route.delete('/ticket/:id', TicketController.remove);
+
+route.post('/login/cadastrar', LoginController.create);
+route.get('/login', LoginController.read);
+route.put('/login/:id', LoginController.update);
+route.delete('/login/:id', LoginController.remove);
+
+route.post('/login', LoginController.login);
 
 module.exports = route;
